@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export class Product {
@@ -11,9 +12,12 @@ export class Product {
 
 @Injectable()
 export class ProductService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getProduct(): Product {
+    // let products = this.http.get('assets/products.json');
+    // console.log(products[0]);
+    // return products[0];
     return new Product(
       0,
       'IPhone 7',
